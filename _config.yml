@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
@@ -7,6 +8,11 @@
 #
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+=======
+# SITE CONFIGURATION
+baseurl: ""
+url: "https://reneve313.github.io/"
+>>>>>>> 32d92ce6533bffc7d4c6201cb9125d3b965111b8
 
 # Site settings
 # These are used to personalize your new site. If you look in the HTML files,
