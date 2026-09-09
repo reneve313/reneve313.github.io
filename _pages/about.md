@@ -6,7 +6,7 @@ subtitle: Dongwoo Kang's personal blog
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: my_photo.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>kdongwoo03@gmail.com</p>
@@ -27,12 +27,12 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-안녕하세요. 강동우 입니다.
-저는 현재 연세대학교 컴퓨터과학과에서 공부하고 있습니다.
-제 관심 분야는 컴퓨터 보안과 인공지능 분야 입니다.
-제가 공부하는 것, 제 관심 분야, 제 프로젝트 등을 업로드 할 계획입니다.
+안녕하세요. 강동우 입니다.  
+저는 현재 연세대학교 컴퓨터과학과에서 공부하고 있습니다.  
+제 관심 분야는 컴퓨터 보안과 인공지능 분야 입니다.  
+제가 공부하는 것, 제 관심 분야, 제 프로젝트 등을 업로드 할 계획입니다.  
 
-This is a personal blog of Dongwoo Kang.
-I am currently studying Computer Science in Yonsei Univ.
-My interests are in computer security and Artificial Inteligence.
-I will post what I am studying , my interests and some of my projects.
+This is a personal blog of Dongwoo Kang.  
+I am currently studying Computer Science in Yonsei Univ.  
+My interests are in computer security and Artificial Inteligence.  
+I will post what I am studying , my interests and some of my projects.  
