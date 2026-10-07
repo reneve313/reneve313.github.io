@@ -7,4 +7,4 @@ overrides:
     upstream_path: _includes/header.liquid
     upstream_sha256: c8663513baded68d9fa5fbe4d6363a976535bbe201efe5138243d0ff03101058
     local_sha256: 26d5299e44be0106fd889c64b3ff2be7cec7d64321750801362ad35513b30cba
-    acknowledged_at: '2026-10-07'
+    acknowledged_at: "2026-10-07"

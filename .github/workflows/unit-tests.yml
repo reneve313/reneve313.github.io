@@ -14,6 +14,10 @@ on:
       - "_pages/**"
       - "_posts/**"
       - "_projects/**"
+      - "_project_notes/**"
+      - "_extra/**"
+      - "_includes/**"
+      - ".al-folio-overrides.yml"
       - "assets/**"
       - "test/**"
       - "package.json"
@@ -32,6 +36,10 @@ on:
       - "_pages/**"
       - "_posts/**"
       - "_projects/**"
+      - "_project_notes/**"
+      - "_extra/**"
+      - "_includes/**"
+      - ".al-folio-overrides.yml"
       - "assets/**"
       - "test/**"
       - "package.json"
@@ -39,7 +47,7 @@ on:
       - ".github/workflows/unit-tests.yml"
 
 jobs:
-  comments-integration-tests:
+  personal-site-tests:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -74,23 +82,12 @@ jobs:
           sudo apt-get update && sudo apt-get install -y imagemagick
           pip3 install --upgrade nbconvert
 
-      - name: Run comments integration test 🧪
-        run: bash test/integration_comments.sh
+      # Upstream demo tests depend on sample posts removed from this personal site.
+      # Build the actual site and verify its navigation, content links and assets.
+      - name: Build and check personal site
+        run: |
+          JEKYLL_ENV=production bundle exec jekyll build --destination /tmp/personal-site-check
+          python3 test/check_personal_site.py /tmp/personal-site-check
 
-      - name: Run plugin toggle integration test 🔌
-        run: bash test/integration_plugin_toggles.sh
-
-      - name: Run distill integration test 📄
-        run: bash test/integration_distill.sh
-
-      - name: Run bootstrap compatibility integration test 🧩
-        run: bash test/integration_bootstrap_compat.sh
-
-      - name: Run upgrade CLI integration test ⬆️
-        run: bash test/integration_upgrade_cli.sh
-
-      - name: Run CSS minify integration test 🎨
-        run: bash test/integration_css_minify.sh
-
-      - name: Run new plugin integration checks 🧩
-        run: bash test/integration_new_plugins.sh
+      - name: Audit local theme overrides
+        run: bundle exec al-folio upgrade overrides audit
