@@ -1,0 +1,47 @@
+---
+layout: default
+title: projects
+permalink: /projects/
+nav: true
+nav_order: 2
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/notebook.css' | relative_url }}" />
+<div class="notebook">
+  <header class="nb-heading">
+    <p class="nb-eyebrow">BUILD & EXPLORE</p>
+    <h1>projects<span class="nb-dot">.</span></h1>
+    <p class="nb-intro">아이디어를 만들고, 시행착오를 기록합니다.<br />프로젝트를 선택하면 그 안에 쌓인 이야기들을 볼 수 있습니다.</p>
+  </header>
+  {% assign groups = 'ongoing,completed' | split: ',' %} {% for group in groups %} {% assign projects = site.projects | where: 'status', group | sort:
+  'importance' %}
+  <section class="nb-project-section" aria-labelledby="heading-{{ group }}">
+    <div class="nb-section-heading">
+      <h2 id="heading-{{ group }}">
+        <span class="nb-status-dot {% if group == 'completed' %}is-complete{% endif %}"></span>{% if group == 'ongoing' %}진행 중인 프로젝트{% else
+        %}완료한 프로젝트{% endif %}<span class="nb-count">{{ projects.size }}</span>
+      </h2>
+      <span class="nb-section-caption">{% if group == 'ongoing' %}WORK IN PROGRESS{% else %}COMPLETED{% endif %}</span>
+    </div>
+    <div class="nb-project-grid">
+      {% for project in projects %} {% assign notes = site.project_notes | where: 'project', project.project_key %}
+      <a class="nb-project-card" href="{{ project.url | relative_url }}">
+        <div class="nb-card-top">
+          <span class="nb-project-icon nb-icon-{{ project.accent }}" aria-hidden="true">{{ project.icon }}</span>{% if project.sample %}<span
+            class="nb-sample"
+            >미리보기 예시</span
+          >{% endif %}
+        </div>
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.description }}</p>
+        <div class="nb-tags">{% for tag in project.stack %}<span>{{ tag }}</span>{% endfor %}</div>
+        <div class="nb-card-bottom"><span>프로젝트 기록 {{ notes.size }}개</span><span aria-hidden="true">↗</span></div>
+      </a>
+      {% else %}
+      <p class="nb-empty">{% if group == 'ongoing' %}새로운 프로젝트를 준비하고 있습니다.{% else %}완료한 프로젝트가 이곳에 쌓입니다.{% endif %}</p>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+  <aside class="nb-note"><span aria-hidden="true">↳</span> 현재 카드는 화면과 탐색 흐름을 확인하기 위한 예시 프로젝트입니다.</aside>
+</div>

@@ -1,0 +1,47 @@
+---
+layout: default
+title: Study notes
+description: 공부한 내용을 주제별로 찾고 다시 읽을 수 있는 작은 기록 도구.
+permalink: /projects/study-notes/
+project_key: study-notes
+status: completed
+importance: 2
+icon: "▤"
+accent: purple
+stack: [JavaScript, Markdown, UI]
+sample: true
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/notebook.css' | relative_url }}" />
+<div class="notebook">
+  <a class="nb-back" href="{{ '/projects/' | relative_url }}">← projects로 돌아가기</a>
+  <header class="nb-detail-heading">
+    <span class="nb-project-icon nb-icon-{{ page.accent }}" aria-hidden="true">{{ page.icon }}</span>
+    <div class="nb-meta">
+      <span>{% if page.status == 'ongoing' %}진행 중{% else %}완료{% endif %}</span>{% if page.sample %}<span class="nb-sample">미리보기 예시</span>{%
+      endif %}
+    </div>
+    <h1>{{ page.title }}</h1>
+    <p class="nb-intro">{{ page.description }}</p>
+    <div class="nb-tags">{% for tag in page.stack %}<span>{{ tag }}</span>{% endfor %}</div>
+  </header>
+  {% assign notes = site.project_notes | where: 'project', page.project_key | sort: 'date' | reverse %}
+  <div class="nb-list-heading">
+    <h2>프로젝트 기록</h2>
+    <span>{{ notes.size }}개의 글</span>
+  </div>
+  {% for note in notes %}<a class="nb-post" href="{{ note.url | relative_url }}"
+    ><div class="nb-post-date">
+      <time datetime="{{ note.date | date: '%Y-%m-%d' }}">{{ note.date | date: '%m.%d' }}</time><span>{{ note.date | date: '%Y' }}</span>
+    </div>
+    <div class="nb-post-main">
+      <div class="nb-meta">{{ note.stage }}</div>
+      <h3>{{ note.title }}</h3>
+      <p>{{ note.description }}</p>
+    </div>
+    <span class="nb-arrow" aria-hidden="true">↗</span></a
+  >{% else %}
+  <p class="nb-empty">첫 번째 프로젝트 기록을 준비하고 있습니다.</p>
+  {% endfor %}
+  <aside class="nb-note"><span aria-hidden="true">↳</span> 실제 진행 이력이 아닌 미리보기용 샘플입니다.</aside>
+</div>
