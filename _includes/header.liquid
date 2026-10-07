@@ -14,9 +14,17 @@
         margin-left: 20px;
       }
     }
-    #navbar a.nav-link[href="{{ '/projects/' | relative_url }}"]:hover,
-    #navbar a.nav-link[href="{{ '/projects/' | relative_url }}"]:focus-visible {
-      color: #b89ae4;
+    #navbar {
+      --nav-accent: #b509ac;
+    }
+    html[data-theme='dark'] #navbar {
+      --nav-accent: #2698ba;
+    }
+    #navbar .nav-link:hover,
+    #navbar .nav-link:focus-visible,
+    #navbar .nav-link:active,
+    #navbar .nav-item.active > .nav-link {
+      color: var(--nav-accent);
     }
   </style>
   <!-- Nav Bar -->

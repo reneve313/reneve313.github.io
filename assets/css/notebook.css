@@ -410,6 +410,12 @@ html[data-theme="dark"] .notebook {
 }
 
 /* Page-specific accents share the same journal layout. */
+.notebook-topics {
+  --nb-accent: #409ac7;
+}
+html[data-theme="dark"] .notebook-topics {
+  --nb-accent: #8bd3f4;
+}
 html:has(.notebook-extra) {
   --global-bg-color: #19191c;
   --global-text-color: #eeeeef;
