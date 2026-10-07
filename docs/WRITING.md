@@ -48,7 +48,14 @@ related_posts: false
 
 본문 위의 돌아가기 링크도 해당 프로젝트 주소로 지정하세요.
 
-## 미리보기
+## Extra: 취미와 일상
+
+`_extra/글이름.md`에 글을 추가합니다. `_extra/`의 예시를 복사해 제목, 설명, 날짜, 본문을 바꾸세요.
+`subject`는 주제 버튼(예: 일상, 음악, 영화), `tags`는 글의 키워드, `motif`는 목록에 표시할 이모지입니다.
+실제 글에서는 `sample: true`와 미리보기 안내를 지웁니다. 글은 `/extra/글이름/` 주소로 생성되고 Topics와 별도로 모입니다.
+본문의 `[← extra로 돌아가기]({{ '/extra/' | relative_url }})` 링크를 유지하면 목록으로 돌아갈 수 있습니다.
+
+## 미리보기 실행
 
 Docker Desktop을 켜고 저장소 폴더에서 `docker compose up -d`를 실행합니다.
 http://localhost:8080/topics/ 와 http://localhost:8080/projects/ 에서 확인합니다.

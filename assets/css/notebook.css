@@ -408,3 +408,47 @@ html[data-theme="dark"] .notebook {
     transition: none;
   }
 }
+
+/* Page-specific accents share the same journal layout. */
+html:has(.notebook-extra) {
+  --global-bg-color: #19191c;
+  --global-text-color: #eeeeef;
+  --global-text-color-light: #b5b3bd;
+  --global-divider-color: #38363e;
+  --global-theme-color: #ee9bc5;
+  --global-hover-color: #f6bedb;
+  --global-code-bg-color: #29252d;
+}
+.notebook-extra,
+html[data-theme="dark"] .notebook-extra {
+  --nb-accent: #ee9bc5;
+  --nb-ink: #eeeeef;
+  --nb-muted: #b5b3bd;
+  --nb-line: #38363e;
+}
+body:has(.notebook-extra),
+body:has(.notebook-extra) #navbar {
+  background-color: #19191c;
+  color: #eeeeef;
+}
+.notebook-extra .nb-filters button.is-active {
+  background: #ffffff;
+  color: #231921;
+}
+.notebook-projects,
+html[data-theme="dark"] .notebook-projects {
+  --nb-accent: #9a79cf;
+}
+html[data-theme="dark"] .notebook-projects {
+  --nb-accent: #cbb3f0;
+}
+.notebook-projects .nb-project-icon {
+  background: #eee7fa;
+  color: #7753a9;
+}
+.notebook-projects .nb-status-dot {
+  background: var(--nb-accent);
+}
+.notebook-projects .nb-status-dot.is-complete {
+  background: #b8a4d2;
+}

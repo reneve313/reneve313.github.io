@@ -66,6 +66,14 @@ if (/gem 'al_math',\s*:git =>/.test(gemfile)) {
 }
 
 for (const forbiddenPath of ["_includes", "_layouts", "_sass", "_scripts", "assets/tailwind", "tailwind.config.js", "assets/webfonts"]) {
+  // This personal site deliberately customizes only the navigation search label.
+  // The upstream/local versions are recorded by the al-folio override audit.
+  if (forbiddenPath === "_includes" && exists("_includes")) {
+    const localIncludes = fs.readdirSync(path.join(root, "_includes"));
+    if (localIncludes.length === 1 && localIncludes[0] === "header.liquid" && exists(".al-folio-overrides.yml")) {
+      continue;
+    }
+  }
   if (exists(forbiddenPath)) {
     failures.push(`Starter must not own core component path \`${forbiddenPath}\`; move ownership to the corresponding gem.`);
   }
