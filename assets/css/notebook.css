@@ -7,9 +7,6 @@
   font-weight: 400;
   padding: 26px 0 48px;
 }
-body:has(.notebook) footer.fixed-bottom {
-  position: static;
-}
 html[data-theme="dark"] .notebook {
   --nb-accent: #7bd4c5;
 }
