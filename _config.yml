@@ -7,7 +7,7 @@ first_name: Dongwoo
 middle_name:
 last_name: Kang
 contact_note: >
-  You can even add a little note about which of these is the best way to reach you.
+  Feel free to reach out about shared interests, projects, or just to say hello.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   컴퓨터과학, 보안 공부 및 프로젝트 기록, 포트폴리오를 위한 블로그입니다. blog for leaving traces of what I've done while studying computer science & security
 footer_text: >

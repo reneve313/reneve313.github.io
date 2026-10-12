@@ -416,30 +416,11 @@ html[data-theme="dark"] .notebook {
 html[data-theme="dark"] .notebook-topics {
   --nb-accent: #8bd3f4;
 }
-html:has(.notebook-extra) {
-  --global-bg-color: #19191c;
-  --global-text-color: #eeeeef;
-  --global-text-color-light: #b5b3bd;
-  --global-divider-color: #38363e;
-  --global-theme-color: #ee9bc5;
-  --global-hover-color: #f6bedb;
-  --global-code-bg-color: #29252d;
+.notebook-extra {
+  --nb-accent: #b64f87;
 }
-.notebook-extra,
 html[data-theme="dark"] .notebook-extra {
   --nb-accent: #ee9bc5;
-  --nb-ink: #eeeeef;
-  --nb-muted: #b5b3bd;
-  --nb-line: #38363e;
-}
-body:has(.notebook-extra),
-body:has(.notebook-extra) #navbar {
-  background-color: #19191c;
-  color: #eeeeef;
-}
-.notebook-extra .nb-filters button.is-active {
-  background: #ffffff;
-  color: #231921;
 }
 .notebook-projects,
 html[data-theme="dark"] .notebook-projects {
@@ -457,4 +438,9 @@ html[data-theme="dark"] .notebook-projects {
 }
 .notebook-projects .nb-status-dot.is-complete {
   background: #b8a4d2;
+}
+
+html[data-theme="dark"] .notebook-projects .nb-project-icon {
+  background: #342b43;
+  color: #d1b9f4;
 }
