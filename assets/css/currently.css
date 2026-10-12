@@ -17,13 +17,6 @@
 .currently-heading h2 > span {
   color: var(--global-theme-color);
 }
-.currently-preview {
-  font-size: 10px;
-  color: var(--global-text-color-light);
-  border: 1px solid var(--global-divider-color);
-  border-radius: 4px;
-  padding: 2px 6px;
-}
 .currently-intro {
   font-size: 13px;
   color: var(--global-text-color-light);
