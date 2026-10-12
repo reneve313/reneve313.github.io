@@ -1,0 +1,103 @@
+.currently {
+  clear: both;
+  padding-top: 30px;
+  margin-bottom: 36px;
+}
+.currently-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+.currently-heading h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+.currently-heading h2 > span {
+  color: var(--global-theme-color);
+}
+.currently-preview {
+  font-size: 10px;
+  color: var(--global-text-color-light);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+.currently-intro {
+  font-size: 13px;
+  color: var(--global-text-color-light);
+  margin: 12px 0 20px;
+}
+.currently-list {
+  border-top: 1px solid var(--global-divider-color);
+}
+.currently-row {
+  display: grid;
+  grid-template-columns: 130px 1fr 18px;
+  gap: 16px;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--global-divider-color);
+  color: var(--global-text-color);
+  text-decoration: none;
+}
+.currently-studying {
+  --currently-accent: #409ac7;
+}
+.currently-building {
+  --currently-accent: #a78bd2;
+}
+.currently-enjoying {
+  --currently-accent: #dc91b9;
+}
+.currently-label {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 500;
+}
+.currently-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--currently-accent);
+  flex-shrink: 0;
+}
+.currently-description {
+  font-size: 14px;
+  line-height: 1.8;
+}
+.currently-arrow {
+  font-size: 20px;
+  color: var(--global-text-color-light);
+}
+.currently-row:hover {
+  text-decoration: none;
+  color: var(--currently-accent);
+}
+.currently-row:hover .currently-arrow {
+  color: var(--currently-accent);
+}
+.currently-row:focus-visible {
+  outline: 2px solid var(--currently-accent);
+  outline-offset: 4px;
+}
+@media (max-width: 600px) {
+  .currently-row {
+    grid-template-columns: 1fr 18px;
+    gap: 8px 12px;
+  }
+  .currently-label {
+    grid-column: 1;
+  }
+  .currently-description {
+    grid-column: 1;
+  }
+  .currently-arrow {
+    grid-column: 2;
+    grid-row: span 2;
+    align-self: center;
+  }
+}

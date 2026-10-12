@@ -22,7 +22,7 @@ announcements:
   limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
-  enabled: true
+  enabled: false
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
@@ -36,3 +36,21 @@ This is a personal blog of Dongwoo Kang.
 I am currently studying Computer Science in Yonsei Univ.  
 My interests are in computer security and Artificial Inteligence.  
 I will post what I am studying , my interests and some of my projects.
+
+<link rel="stylesheet" href="{{ '/assets/css/currently.css' | relative_url }}">
+<section class="currently" aria-labelledby="currently-title">
+  <div class="currently-heading">
+    <h2 id="currently-title">currently<span aria-hidden="true">.</span></h2>
+    <span class="currently-preview">미리보기 문구</span>
+  </div>
+  <p class="currently-intro">요즘의 관심사와, 조금씩 만들어가는 것들.</p>
+  <div class="currently-list">
+    {% for item in site.data.currently %}
+    <a class="currently-row currently-{{ item.key }}" href="{{ item.url | relative_url }}">
+      <span class="currently-label"><span class="currently-dot" aria-hidden="true"></span>{{ item.label }}</span>
+      <span class="currently-description">{{ item.description }}</span>
+      <span class="currently-arrow" aria-hidden="true">↗</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>

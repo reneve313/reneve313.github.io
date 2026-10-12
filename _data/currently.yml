@@ -1,0 +1,12 @@
+- key: studying
+  label: Studying
+  description: 컴퓨터 보안과 인공지능, 궁금한 원리를 하나씩 공부하는 중.
+  url: /topics/
+- key: building
+  label: Building
+  description: 작은 실습으로 웹 보안을 이해하는 Security lab.
+  url: /projects/security-lab/
+- key: enjoying
+  label: Enjoying
+  description: 산책과 음악, 공부 밖에서 발견하는 소소한 즐거움.
+  url: /extra/
